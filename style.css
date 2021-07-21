@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+:root {
+    --primary: #fff;
+    --background: #61AAF7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P',sans-serif;
+    color: var(--primary);
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background: url(./img/background.png) repeat-x bottom left;
+    cursor: url(./img/aim.png), text;
+    background-color: var(--background);
+}
+
+
+input + label {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    z-index: 5;
+    background: url('./img/duck.png') no-repeat left center;
+}
+
+input {
+    opacity: 0;
+}
+
+input:checked + label {
+    opacity: 0;
+    transition: all 0.5s;
+    transform: rotate(120deg);
+    transform-origin: 60%;
+    z-index: -5;
+}
+
+.score {
+    position: absolute;
+    bottom: 0;
+    line-height: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    background-color: blue;
+}
+
+score:after {
+    content: "";
+}
+
+@keyframes fly {
+    0% {
+        left: 150%;
+        top: 10%;
+    }
+
+    25% {
+        left: 80%;
+        top: 50%
+    }   
+    
+    50% {
+        left: 50%;
+        top: 30%
+    }   
+
+    75% {
+        left: 30%;
+        top: 40%
+    }   
+
+    
+    75% {
+        left: -50%;
+        top: 10%
+    } 
+}
